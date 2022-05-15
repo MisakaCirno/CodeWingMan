@@ -5,8 +5,24 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FastCopy"
         mc:Ignorable="d"
-        Title="快速复制工具" Height="200" Width="200">
+        Title="快速复制工具" Height="200" Width="300"
+        Activated="Window_Activated"
+        WindowStartupLocation="CenterScreen">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CheckBox Content="TopMost" Checked="CheckBox_Checked" Margin="5"/>
+        <CheckBox Content="Enable Auto Copy" Checked="CheckBox_Checked_1" Margin="5" Grid.Row="1"/>
+        <TextBox x:Name="main_TextBox" Grid.Row="2" Margin="5" 
+                 TextWrapping="Wrap" 
+                 VerticalScrollBarVisibility="Auto" 
+                 AcceptsReturn="True"
+                 AcceptsTab="True">
 
+        </TextBox>
     </Grid>
+
 </Window>

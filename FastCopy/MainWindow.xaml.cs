@@ -20,9 +20,29 @@ namespace FastCopy
     /// </summary>
     public partial class MainWindow : Window
     {
+        bool enable = false;
+
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void CheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            Topmost = Convert.ToBoolean((sender as CheckBox).IsChecked);
+        }
+
+        private void Window_Activated(object sender, EventArgs e)
+        {
+            if (enable)
+            {
+                Clipboard.SetText(main_TextBox.Text);
+            }
+        }
+
+        private void CheckBox_Checked_1(object sender, RoutedEventArgs e)
+        {
+            enable = Convert.ToBoolean((sender as CheckBox).IsChecked);
         }
     }
 }
